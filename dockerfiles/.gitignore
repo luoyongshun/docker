@@ -1,0 +1,15 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+out/
+build/
+.gradle/
+.idea/
+.ideaDataSources/
+.DS_Store
+.git
+yowootech-entity.iws
+*/*.iml
+*.iml
+*.ipr
+*.iws
