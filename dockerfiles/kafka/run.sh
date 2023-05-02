@@ -1,7 +1,4 @@
 # bin/sh
-# bitnami/kafka
-docker run -it -d --privileged --restart=always --network=kafka_network --name kafka -e KAFKA_ADVERTISED_HOST_NAME=kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092 -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092 -e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092 -e KAFKA_BROKER_NO=1001 -e FF_NETWORK_PER_BUILD=1 -e TZ="Asia/Shanghai" -e KAFKA_DEFAULT_REPLICATION_FACTOR=1 -e KAFKA_LOG_RETENTION_HOURS=72  -e KAFKA_LOG_DIRS="/kafka/kafka-logs"  -v /var/kafka/logs:/opt/kafka/logs -v /var/local/kafka/data:/kafka/kafka-logs -v /var/local/kafka/conf/server.properties:/opt/kafka/config/server.properties bitnami/kafka:latest
-
 # wurstmeister/kafka
 docker run -it -d --privileged --restart=always --network=kafka_network --name kafka -e KAFKA_ADVERTISED_HOST_NAME=kafka -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092 -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092 -e KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092 -e KAFKA_BROKER_NO=1001 -e FF_NETWORK_PER_BUILD=1 -e TZ="Asia/Shanghai" -e KAFKA_DEFAULT_REPLICATION_FACTOR=1 -e KAFKA_LOG_RETENTION_HOURS=72  -e KAFKA_LOG_DIRS="/kafka/kafka-logs" -v /var/kafka/logs:/opt/kafka/logs -v /var/local/kafka/data:/kafka/kafka-logs wurstmeister/kafka:latest
 
