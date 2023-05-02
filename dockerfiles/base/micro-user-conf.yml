@@ -1,0 +1,179 @@
+apiVersion: v1
+data:
+  config.toml: >
+    [service]
+
+    port = ":8081"
+
+    shutdown_timeout = 3000
+
+
+    [redis]
+
+    host = "r-wz9ksus7rm726mxwp4.redis.rds.aliyuncs.com:6379"
+
+    password = ""
+
+    dial_timeout = 6000
+
+    read_timeout = 3000
+
+    write_timeout = 60000
+
+
+    [mysql]
+
+    user = "releaseuser"
+
+    password = "de0e2ef1-f4be-2e78-b6c7"
+
+    host = "rm-wz9t4bek7ej2f615a.mysql.rds.aliyuncs.com"
+
+    port = 3306
+
+    db_name = "ctjt-release"
+
+    parameters =
+    "charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
+
+    #设置连接池中空闲连接的最大数量
+
+    max_idle_conn = 4000
+
+    #设置打开数据库连接的最大数量。
+
+    max_open_conn = 8000
+
+    #連接超時時間
+
+    max_life_time = 60000000000
+
+
+    # 是否启用swagger
+
+    swagger = true
+
+
+    # 日志配置
+
+    [logger]
+
+    level = "debug"
+
+    formatter = "json"
+
+
+    [logger.extra]
+
+    module = "用户微服务"
+
+    env = "release"
+
+    namespace = "szctjt"
+
+
+    [rpc.server]
+
+    port = ":50081"
+
+
+    [rpc.client]
+
+    base = "micro-base:50080"
+
+    user = "micro-user:50081"
+
+    auth = "micro-auth:50082"
+
+    teaching = "micro-teaching:50089"
+
+    goods = "micro-goods:50083"
+
+    space = "micro-space:50088"
+
+    order = "micro-order:50085"
+
+    assignment = "micro-assignment:50097"
+
+    sale = "micro-sale:50084"
+
+
+    [http]
+
+    # 允许的最大内容长度(64M)
+
+    max_content_length = 67108864
+
+    max_logger_length = 4096
+
+
+    [jws]
+
+    sign_key = "13f6b469-969b-c040-70bf-1d3a8c7cacfd"
+
+
+    [zzb]
+
+    url = "https://cloud.kaifakuai.com"
+
+    app_id = "app5f2f197e7598cf76"
+
+    app_secret = "90b2e97f649b4bf2a7a712434e3e8024"
+
+
+    [aliyun.oss]
+
+    addr = "https://ctjt-release.oss-cn-shenzhen.aliyuncs.com"
+
+    bucket_name = "ctjt-release"
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","data":{"config.toml":"[service]\nport =
+      \":8081\"\nshutdown_timeout = 3000\n\n[redis]\nhost =
+      \"r-wz9ksus7rm726mxwp4.redis.rds.aliyuncs.com:6379\"\npassword =
+      \"\"\ndial_timeout = 6000\nread_timeout = 3000\nwrite_timeout =
+      60000\n\n[mysql]\nuser = \"releaseuser\"\npassword =
+      \"de0e2ef1-f4be-2e78-b6c7\"\nhost =
+      \"rm-wz9t4bek7ej2f615a.mysql.rds.aliyuncs.com\"\nport = 3306\ndb_name =
+      \"ctjt-release\"\nparameters =
+      \"charset=utf8mb4\u0026parseTime=True\u0026loc=Local\u0026allowNativePasswords=true\"\n#设置连接池中空闲连接的最大数量\nmax_idle_conn
+      = 4000\n#设置打开数据库连接的最大数量。\nmax_open_conn = 8000\n#連接超時時間\nmax_life_time =
+      60000000000\n\n# 是否启用swagger\nswagger = true\n\n# 日志配置\n[logger]\nlevel =
+      \"debug\"\n\n[logger.extra]\nmodule = \"用户微服务\"\nenv =
+      \"release\"\nnamespace = \"szctjt\"\n\n[rpc.server]\nport =
+      \":50081\"\n\n[rpc.client]\nbase = \"micro-base:50080\"\nuser =
+      \"micro-user:50081\"\nauth = \"micro-auth:50082\"\n\n[http]\n#
+      允许的最大内容长度(64M)\nmax_content_length = 67108864\nmax_logger_length =
+      4096\n\n[jws]\nsign_key = \"0wsszP*VI4#)@Ekmq\"\n#至尊宝测试\n[zzb]\nurl =
+      \"https://cloud.kaifakuai.com\"\napp_id =
+      \"app5f2f197e7598cf76\"\napp_secret =
+      \"90b2e97f649b4bf2a7a712434e3e8024\"\n\n[aliyun.oss]\naddr =
+      \"https://ctjt-dev.oss-cn-shenzhen.aliyuncs.com\"\nbucket_name =
+      \"ctjt-release\"\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"micro-user-conf","namespace":"release"}}
+  creationTimestamp: '2021-04-30T03:17:00Z'
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data': {}
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:kubectl.kubernetes.io/last-applied-configuration': {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2021-04-30T03:17:00Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          'f:config.toml': {}
+      manager: ACK-Console Apache-HttpClient
+      operation: Update
+      time: '2022-07-14T10:04:10Z'
+  name: micro-user-conf
+  namespace: release
+  resourceVersion: '3201306236'
+  uid: 687108d0-c5e3-4f75-acc6-fd70b7f13a56

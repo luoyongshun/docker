@@ -1,0 +1,12 @@
+dataDir=/data  # 保存zookeeper中的数据
+clientPort=2181 # 客户端连接端口，通常不做修改
+dataLogDir=/datalog
+tickTime=2000  # 通信心跳时间
+initLimit=5    # LF(leader - follower)初始通信时限
+syncLimit=2    # LF 同步通信时限
+autopurge.snapRetainCount=3
+autopurge.purgeInterval=0
+maxClientCnxns=60
+standaloneEnabled=true
+admin.enableServer=true
+server.1=localhost:2888:3888;2181
