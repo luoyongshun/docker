@@ -1,4 +1,4 @@
-docker run -d --privileged --restart=always -p 47324:47324 -p 1883:1883 -p 5672:5672 -p 15672:15672 -p 25672:25672 --name rabbitmq -v /var/local/rabbitmq/data:/opt/rabbitmq/data -e TZ="Asia/Shanghai" rabbitmq:latest
+docker run -d --privileged --restart=always -e TZ="Asia/Shanghai" --name rabbitmq -p 47324:47324 -p 1883:1883 -p 5672:5672 -p 15672:15672 -p 25672:25672 -v /var/local/rabbitmq/data:/opt/rabbitmq/data rabbitmq:latest
 
 #开启WEB管理
 rabbitmq-plugins enable rabbitmq_management
